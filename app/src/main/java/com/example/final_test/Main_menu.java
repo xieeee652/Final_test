@@ -87,7 +87,7 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
     @Override
     public void  onClick(View v) {
         switch (v.getId()) {
-         /*   case R.id.bot_add:
+            case R.id.bot_add:
                 Intent intent_1 = new Intent();
                 intent_1.setClass(this,Activity_menu.class);
                 startActivity( intent_1);
@@ -101,7 +101,7 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
                 finish();
                 break;
 
-          */
+
 
             case R.id.bot_ring:
                 Intent intent_3 = new Intent();
@@ -109,7 +109,7 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
                 startActivity(intent_3);
                 finish();
                 break;
-/*
+
             case R.id.bot_map:
                 Intent intent_4 = new Intent();
                 intent_4.setClass(Main_menu.this,MainActivity_hy.class);
@@ -117,7 +117,7 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
                 finish();
                 break;
 
- */
+
         }
     }
 
