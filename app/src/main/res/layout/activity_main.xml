@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_conversion_absoluteHeight="0dp"
+            tools:layout_editor_absoluteY="0dp"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_conversion_absoluteWidth="393dp" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/pl_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="活動編號："
+        app:layout_constraintEnd_toStartOf="@+id/update_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/update_nubs"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pl_0"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/pl_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="活動名稱："
+        app:layout_constraintEnd_toStartOf="@+id/update_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_nubs" />
+
+
+    <EditText
+        android:id="@+id/update_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pl_1"
+        app:layout_constraintTop_toBottomOf="@+id/update_nubs" />
+
+    <TextView
+        android:id="@+id/ans_a_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="活動時間："
+        app:layout_constraintEnd_toStartOf="@+id/update_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <EditText
+        android:id="@+id/update_date_time_years"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_years_cc"
+        app:layout_constraintStart_toEndOf="@+id/ans_a_1"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <TextView
+        android:id="@+id/update_date_time_years_cc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoSizePresetSizes="@array/txt_size_item"
+        android:text="年"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_month"
+        app:layout_constraintStart_toEndOf="@id/update_date_time_years"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <EditText
+        android:id="@+id/update_date_time_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_month_cc"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_years_cc"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <TextView
+        android:id="@+id/update_date_time_month_cc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoSizePresetSizes="@array/txt_size_item"
+        android:text="月"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_day"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_month"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <EditText
+        android:id="@+id/update_date_time_day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_day_cc"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_month_cc"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <TextView
+        android:id="@+id/update_date_time_day_cc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoSizePresetSizes="@array/txt_size_item"
+        android:text="日"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_hour"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_day"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <EditText
+        android:id="@+id/update_date_time_hour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_hour_cc"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_day_cc"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <TextView
+        android:id="@+id/update_date_time_hour_cc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoSizePresetSizes="@array/txt_size_item"
+        android:text=":"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_min"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_hour"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <EditText
+        android:id="@+id/update_date_time_min"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10sp"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_min_cc"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_hour_cc"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <TextView
+        android:id="@+id/update_date_time_min_cc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoSizePresetSizes="@array/txt_size_item"
+        android:text=":"
+        app:layout_constraintEnd_toStartOf="@+id/update_date_time_se"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_min"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+    <EditText
+        android:id="@+id/update_date_time_se"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text=""
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/update_date_time_min_cc"
+        app:layout_constraintTop_toBottomOf="@+id/update_name" />
+
+
+    <TextView
+        android:id="@+id/ans_b_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="活動地點："
+        app:layout_constraintEnd_toStartOf="@+id/update_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_date_time_month" />
+
+    <EditText
+        android:id="@+id/update_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ans_b_1"
+        app:layout_constraintTop_toBottomOf="@+id/update_date_time_se" />
+
+
+    <TextView
+        android:id="@+id/ans_c_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="優先級："
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_address" />
+
+
+    <RadioGroup
+        android:id="@+id/select_priority"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ans_c_1"
+        app:layout_constraintTop_toBottomOf="@+id/update_address">
+
+        <RadioButton
+            android:id="@+id/rb_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_style_2"
+            android:text="高"
+            android:textColor="@color/indigo"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rb_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="11dp"
+            android:background="@drawable/button_style_2"
+            android:text="低"
+            android:textColor="@color/indigo"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    //间隔
+
+
+    <Button
+        android:id="@+id/bot_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存"
+        android:textColor="@color/sienna"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_priority" />
+
+    //间隔
+
+    <Button
+        android:id="@+id/bot_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清空"
+        android:textColor="@color/sienna"
+        app:layout_constraintEnd_toStartOf="@+id/bot_6"
+        app:layout_constraintStart_toEndOf="@+id/bot_1"
+        app:layout_constraintTop_toBottomOf="@+id/select_priority" />
+
+    //间隔
+
+    <Button
+        android:id="@+id/bot_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:text="前往修改"
+        android:textColor="@color/sienna"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/t_31"
+        app:layout_constraintEnd_toStartOf="@+id/bot_1"
+        app:layout_constraintStart_toStartOf="@+id/bot_1"
+        app:layout_constraintTop_toBottomOf="@+id/ans_b_1" />
+
+
+    <Button
+        android:id="@+id/bot_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看所有活動"
+        android:textColor="@color/sienna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_priority" />
+
+
+    <TextView
+        android:id="@+id/delete_nub_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="需要刪除的活動的編號："
+        app:layout_constraintEnd_toStartOf="@+id/delete_nub"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bot_1" />
+
+    <EditText
+        android:id="@+id/delete_nub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintEnd_toStartOf="@+id/bot_4"
+        app:layout_constraintStart_toEndOf="@+id/delete_nub_1"
+        app:layout_constraintTop_toBottomOf="@+id/bot_2" />
+
+
+    <Button
+        android:id="@+id/bot_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="刪除"
+        android:textColor="@color/sienna"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/delete_nub"
+        app:layout_constraintTop_toBottomOf="@+id/bot_6" />
+
+
+    <TextView
+        android:id="@+id/t_31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="活動編號"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bot_4" />
+
+    <TextView
+        android:id="@+id/t_32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="活動名稱"
+        app:layout_constraintBaseline_toBaselineOf="@+id/t_31"
+        app:layout_constraintStart_toEndOf="@+id/t_31" />
+
+    <TextView
+        android:id="@+id/t_33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="活動時間"
+        app:layout_constraintEnd_toStartOf="@+id/t_34"
+        app:layout_constraintStart_toEndOf="@+id/t_32"
+        app:layout_constraintTop_toTopOf="@+id/t_32" />
+
+    <TextView
+        android:id="@+id/t_34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="活動地點"
+        app:layout_constraintEnd_toStartOf="@+id/t_35"
+        app:layout_constraintTop_toBottomOf="@+id/bot_4" />
+
+    <TextView
+        android:id="@+id/t_35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="優先級"
+        app:layout_constraintEnd_toStartOf="@+id/t_36"
+        app:layout_constraintTop_toBottomOf="@+id/bot_4" />
+
+    <TextView
+        android:id="@+id/t_36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打卡"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bot_4" />
+
+
+    <ListView
+        android:id="@+id/list_views_1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bot_00"
+        app:layout_constraintStart_toStartOf="@+id/t_31"
+        app:layout_constraintTop_toBottomOf="@+id/t_33" />
+
+
+    //间隔
+
+    <Button
+        android:id="@+id/bot_00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="返回活動管理頁"
+        android:textColor="@color/sienna"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
