@@ -242,9 +242,8 @@
             android:id="@+id/rb_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_style_2"
             android:text="高"
-            android:textColor="@color/indigo"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
         <RadioButton
@@ -252,9 +251,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="11dp"
-            android:background="@drawable/button_style_2"
             android:text="低"
-            android:textColor="@color/indigo"
+            android:textColor="@color/black"
             android:textSize="16sp" />
     </RadioGroup>
 
@@ -266,7 +264,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="保存"
-        android:textColor="@color/sienna"
+        android:textColor="@color/black"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/select_priority" />
@@ -278,7 +276,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="清空"
-        android:textColor="@color/sienna"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/bot_6"
         app:layout_constraintStart_toEndOf="@+id/bot_1"
         app:layout_constraintTop_toBottomOf="@+id/select_priority" />
@@ -291,7 +289,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="96dp"
         android:text="前往修改"
-        android:textColor="@color/sienna"
+        android:textColor="@color/black"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/t_31"
         app:layout_constraintEnd_toStartOf="@+id/bot_1"
@@ -304,7 +302,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="查看所有活動"
-        android:textColor="@color/sienna"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/select_priority" />
 
@@ -336,7 +334,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="15dp"
         android:text="刪除"
-        android:textColor="@color/sienna"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/delete_nub"
         app:layout_constraintTop_toBottomOf="@+id/bot_6" />
@@ -409,7 +407,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="返回活動管理頁"
-        android:textColor="@color/sienna"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
