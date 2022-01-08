@@ -85,46 +85,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i)
             {
-                        /*
-                        switch (i){
-                            case R.id.rb_1:
-                                ac_priority = "高";
-                                break;
-                            case R.id.rb_2:
-                                ac_priority = "低";
-                                break;
-                        }
-                        */
+
                 RadioButton radioButton = radioGroup.findViewById(i);
-                //Toast.makeText(MainActivity.this,radioButton.getText(),Toast.LENGTH_LONG).show();
                 ac_priority= (String) radioButton.getText();
             }
         });
-        //创建并打开数据库
+        //創建並打開數據庫
         helper=new sql_activities(this);
-
-        /*
-        //初始化数据库表格
-        sql_db = helper.getReadableDatabase();
-        Cursor cursor = sql_db.query("activitys_arrangement",null,null,null,null,null,null);
-        if (cursor.getCount()==0)
-        {
-            ContentValues values=new ContentValues();
-
-            values.put("num","活动序号");
-            values.put("names","活动名称");
-            values.put("data_time","活动时间");
-            values.put("address","活动地址");
-            values.put("priority","优先级");
-            values.put("record","打卡情况");
-            sql_db=helper.getWritableDatabase();
-            Long postion=sql_db.insert(lite_1,null,values);
-            sql_db.close();
-        }
-
-         */
-
-
         list_view_1.setAdapter(null);
     }
 
@@ -149,25 +116,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId())
         {
-            case R.id.bot_1://读取输入的所有信息，并将信息存入数据库中
+            case R.id.bot_1://讀取輸入的所有信息，並將信息讀入資料庫中
+
 
                 if (ac_na == " " || t_y == " " || t_mo == " " || t_d == " " || t_h == " " || t_mi == " " || t_se == " " || ac_ad == " " || ac_nubs == " ")
                 {
-                    Toast.makeText(this,"信息不完整，请输入完整信息！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"信息不完整，請輸入完整信息!",Toast.LENGTH_LONG).show();
                     break;
                 }
-                //进行输入数据的判定
+                //進行輸入數據的判定
                 int t_ys=Integer.parseInt(t_y);
                 if ( t_ys>2025 || t_ys < 2021)
                 {
-                    Toast.makeText(this,"年份输入有误，请重新输入！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"年份輸入有誤，請重新輸入!",Toast.LENGTH_LONG).show();
                     break;
                 }
 
                 int t_mos=Integer.parseInt(t_mo);
                 if ( t_mos >12 || t_mos < 0)
                 {
-                    Toast.makeText(this,"月份输入有误，请重新输入！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"月份輸入有誤，請重新輸入!",Toast.LENGTH_LONG).show();
                     break;
                 }
                 else
@@ -176,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int t_ds=Integer.parseInt(t_d);
                 if ( t_ds > 31 || t_ds < 0)
                 {
-                    Toast.makeText(this,"日期输入有误，请重新输入！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"日期輸入有誤，請重新輸入!",Toast.LENGTH_LONG).show();
                     break;
                 }
                 else
@@ -185,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int t_hs=Integer.parseInt(t_h);
                 if ( t_hs >24 || t_hs < 0)
                 {
-                    Toast.makeText(this,"小时输入有误，请重新输入！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"小時輸入有誤，請重新輸入!",Toast.LENGTH_LONG).show();
                     break;
                 }
                 else
@@ -194,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int t_mis=Integer.parseInt(t_mi);
                 if ( t_mis >60 || t_mis < 0)
                 {
-                    Toast.makeText(this,"分钟输入有误，请重新输入！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"分鐘輸入有誤，請重新輸入!",Toast.LENGTH_LONG).show();
                     break;
                 }
                 else
@@ -203,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int t_ses=Integer.parseInt(t_se);
                 if ( t_ses >60 || t_ses < 0)
                 {
-                    Toast.makeText(this,"秒数输入有误，请重新输入！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"秒數輸入有誤，請重新輸入!",Toast.LENGTH_LONG).show();
                     break;
                 }
                 else
@@ -240,11 +208,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int notificationId = 1;
                 notificationManager.notify(notificationId, builder.build());
 
-                //Toast.makeText(this,"数据地址为"+postion,Toast.LENGTH_LONG).show();
-                //辅助语句用于显示存入的数据所在地址
                 break;
 
-            case R.id.bot_2://清空所有TextView中的数据
+            case R.id.bot_2://清空所有TextView中的數據
                 nubs.setText(" ");
                 names.setText(" ");
                 time_y.setText(" ");
@@ -256,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 addresses.setText(" ");
                 break;
 
-            case R.id.bot_4://根据序号删除数据库中的记录
+            case R.id.bot_4://根據序號刪除數據庫中的紀錄
                 String delete_nubs=deleted_nub.getText().toString().trim();
 
                 sql_db=helper.getWritableDatabase();
@@ -264,17 +230,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 sql_db.close();
 
                 deleted_nub.setText(" ");
-                //Toast.makeText(this,"成功删除序号为"+delete_nubs+"的活动",Toast.LENGTH_LONG).show();
+
                 break;
 
-            case R.id.bot_6:            //查看已经存入数据库的活动数量(只能查某一个表格的内容，不可以跨表查询)
+            case R.id.bot_6:            //查看已經存入數據庫的數量(只能查某一個表格的内容，不可以跨表查詢)
                 sql_db = helper.getReadableDatabase();
                 Cursor cursor = sql_db.query("activitys_arrangement",null,null,null,null,null,null);
                 act_list = new ArrayList<Activity>();
                 cursor.moveToFirst();
                 if(cursor.getCount()==0)
                 {
-                    Toast.makeText(this,"数据库中还没有任何活动信息，请先输入活动信息",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"數據庫中還沒有任何活動信息，請先輸入活動信息",Toast.LENGTH_LONG).show();
                     break;
                 }
                 else
@@ -308,14 +274,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.bot_00:
                 Intent intent = new Intent();
-                intent.setClass(this,Activity_menu.class);     //changes_in_1后面需要替代为主界面class
+                intent.setClass(this,Activity_menu.class);     //changes_in_1後面需要替代為主畫面class
                 startActivity( intent);
                 finish();
                 break;
 
             case R.id.bot_next:
                 Intent intent_2 = new Intent();
-                intent_2.setClass(this,changes_in_1.class);     //changes_in_1后面需要替代为主界面class
+                intent_2.setClass(this,changes_in_1.class);     //changes_in_1後面需要替代為主畫面class
                 startActivity( intent_2);
                 finish();
                 break;
@@ -344,7 +310,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {//将position所指的数据填充到ListView中
+        public View getView(int position, View convertView, ViewGroup parent) {//將position所指的數據填入ListView中
             View view = View.inflate(MainActivity.this,R.layout.list_item_1,null);
 
             Activity activity = act_list.get(position);
