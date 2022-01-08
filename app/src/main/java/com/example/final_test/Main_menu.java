@@ -135,15 +135,7 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
                     Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(Main_menu.this, SignInActivity.class);
             startActivity(intent);
-            /*List<AuthUI.IdpConfig> providers = Arrays.asList(
-                    new AuthUI.IdpConfig.EmailBuilder().build());
 
-            startActivityForResult(
-                    AuthUI.getInstance()
-                            .createSignInIntentBuilder()
-                            .setAvailableProviders(providers)
-                            .build(),
-                    RC_SIGN_IN);*/
         }
 
     }
@@ -157,52 +149,7 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
     }
 
 
-    // [END on_start_check_user]
-/*
-    private void createAccount(String email, String password) {
-        // [START create_user_with_email]
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-                    }
-                });
-        // [END create_user_with_email]
-    } */
-    /*private void signIn(String email, String password) {
-        // [START sign_in_with_email]
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
-                    }
-                });
-        // [END sign_in_with_email]
-    }*/
+
 
     private void sendEmailVerification() {
         // Send verification email
@@ -233,13 +180,13 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
             while (true){
                 SimpleDateFormat formatter   =   new SimpleDateFormat( " yyyy-MM-dd HH:mm:ss " );
                 Date curDate =  new Date(System.currentTimeMillis());
-                //获取当前时间
+                //獲取當前時間
                 String str = formatter.format(curDate);
                 handler.sendMessage(handler.obtainMessage(100,str));
-                Thread.sleep(1000);//实时显示当前时间
+                Thread.sleep(1000);//顯示當前時間
 
 
-                //将数据库中的数据放入listView中
+                //將數據庫中的數據放入listView中
                 sql_activities helper=new sql_activities(Main_menu.this);
                 sql_db = helper.getReadableDatabase();
                 Cursor cursor = sql_db.query("activitys_arrangement",null,null,null,null,null,null);
@@ -262,23 +209,16 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
                         /*String record = cursor.getString(5);*/
 
                         try{
-                            //规定格式 (格式根据自己数据库取得的数据进行规范)
+                            //規定格式 (格式根據自己數據庫取得的數據進行規範)
                             SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                            //获取当前时间
+                            //獲取當前時間
                             Date date = new Date(System.currentTimeMillis());
                             String date3=sdf.format(date);
                             if((time.compareTo(String.valueOf(date3)))>0){
                                 Activity activityOBJ = new Activity(num,names,time,adress,priority/*,null*/);
                                 act_list.add(activityOBJ);
                             }
-                            //时间date类型 和 时间String类型
-                                /*if(i<0&&priority=="高"){
 
-
-                                    Activity activityOBJ = new Activity(num,names,time,adress,priority,record);
-                                    act_list.add(activityOBJ);
-
-                                }*/
                         }catch(Exception e){
                             e.printStackTrace();
                         }
@@ -336,7 +276,7 @@ public class Main_menu extends AppCompatActivity implements View.OnClickListener
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {//将position所指的数据填充到ListView中
+        public View getView(int position, View convertView, ViewGroup parent) {//將position所指的數據填入到ListView中
             View view = View.inflate(Main_menu.this,R.layout.ningbao,null);
 
             Activity activity = act_outs.get(position);
