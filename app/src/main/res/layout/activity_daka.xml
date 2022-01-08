@@ -23,7 +23,7 @@
         android:id="@+id/txt_1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/browser_actions_bg_grey"
         android:text="活動列表"
         android:textAlignment="center"
         android:textSize="24dp"
