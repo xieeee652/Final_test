@@ -74,20 +74,15 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
                 String sqlname = "activitys_arrangement";
                 boolean hasact = false;
 
-                //将数据库中的已经开始的活动放入listView中
+                //將數據庫中的已經開始隻活動放入listView中
                 helper=new sql_activities(this);
                 sql_db = helper.getReadableDatabase();
-               /* Calendar c = Calendar.getInstance();
-                Date curDate = c.getTime();
-                String curTime = formatter.format(curDate);*/
-                //Toast.makeText(this,curTime,Toast.LENGTH_LONG).show();
-
 
                 Cursor cursor = sql_db.query(sqlname,null, null, null, null,
                         null,null);
                 cursor.moveToFirst();
                 if(cursor.getCount() == 0) {
-                    Toast.makeText(this,"数据库中无活动",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"數據庫中無活動",Toast.LENGTH_LONG).show();
                 }
                 else {
                     daka_list = new ArrayList<Activity>();
@@ -100,18 +95,9 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
                         String priority = cursor.getString(4);
                         String record = cursor.getString(5);
 
-                      /*   String[] getday = time.split(" ");
-                        String actTime = getday[0];
-                        //Toast.makeText(this,actTime,Toast.LENGTH_LONG).show();
 
-                       while(curTime.equals(time)){
-
-                            Activity activityOBJ = new Activity(num,names,time,adress,priority,record);
-                            daka_list.add(activityOBJ);
-                            hasact = true;
-                        }*/
                         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                        //获取当前时间
+                        //獲取當前時間
                         Date date = new Date(System.currentTimeMillis());
                         String cur_date = sdf.format(date);
                         String date_cur = cur_date.substring(0,10);
@@ -202,7 +188,6 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    //适配器的设置
     class ActivityAdapter extends BaseAdapter implements View.OnClickListener {
 
         public ActivityAdapter(){
@@ -225,7 +210,7 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {//将position所指的数据填充到ListView中
+        public View getView(int position, View convertView, ViewGroup parent) {//將position所指的數據填入到ListView中
 
             View view = View.inflate(DakaActivity.this,R.layout.list_item_daka,null);
 
@@ -262,12 +247,10 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
                     TextView act_id = findViewById(R.id.num);
 
                     String time = act_date.getText().toString().trim();
-                    String id = act_id.getText().toString().trim();   //读取num -->id号
-
-                    //Toast.makeText(DakaActivity.this, "好耶！", Toast.LENGTH_LONG).show();
+                    String id = act_id.getText().toString().trim();   //讀取num -->id
 
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    //获取当前时间
+                    //獲取當前時間
 
 
                     Calendar calendar = Calendar.getInstance();
@@ -280,22 +263,23 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
                     String daka_date = time;
 
 
-                    //获取当前时间
+                    //獲取當前時間
 
                     try {
-                        if ((cur_date.compareTo(String.valueOf(daka_date)) < 0)) {//比较两个时间，如果未超过打卡时间就显示Toast
-                            Toast.makeText(DakaActivity.this, "打卡时间未到！", Toast.LENGTH_LONG).show();
-                        } else if ((cur_date.compareTo(String.valueOf(daka_date))> 0) && (daka_date.compareTo(String.valueOf(end_date)) > 0)) {//到打卡时间后就显示打卡成功并且将数据库中当前活动的record变为1
+                        if ((cur_date.compareTo(String.valueOf(daka_date)) < 0)) {//比較兩個時間，如未超過打卡時間就顯示Toast
+                            Toast.makeText(DakaActivity.this, "打卡時間未到！", Toast.LENGTH_LONG).show();
+                        } else if ((cur_date.compareTo(String.valueOf(daka_date))> 0) && (daka_date.compareTo(String.valueOf(end_date)) > 0)) {
+                            //到打卡時間就顯示打卡成功並且將數據庫中目前活動的record變為1
                             sql_db = helper.getReadableDatabase();
                             ContentValues contentValues = new ContentValues();
                             contentValues.put("record", "1");
                             sql_db.update("activitys_arrangement", contentValues, "num = ?", new String[]{id});
                             Toast.makeText(DakaActivity.this, "打卡成功！", Toast.LENGTH_LONG).show();
-                        } else if ((daka_date.compareTo(String.valueOf(end_date)) < 0)) {//超过打卡时间后就显示打卡超时
-                            Toast.makeText(DakaActivity.this, "打卡超时！", Toast.LENGTH_LONG).show();
+                        } else if ((daka_date.compareTo(String.valueOf(end_date)) < 0)) {//超過打卡時間後就顯示打卡超時
+                            Toast.makeText(DakaActivity.this, "打卡超時！", Toast.LENGTH_LONG).show();
                         }
                     } catch (Exception e) {
-                        System.out.print("打卡错误");
+                        System.out.print("打卡錯誤");
                         e.printStackTrace();
                     }
                     break;

@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 intent2.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent2, 0);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                        .setSmallIcon(R.drawable.baseline_event_white_12)
+                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark_normal_background)
                         .setContentTitle(ac_na)
                         .setContentText("已添加到活動數據庫中！")
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)

@@ -25,7 +25,7 @@ public class changes_in_1 extends AppCompatActivity implements View.OnClickListe
     private SQLiteDatabase sql_db;
     private String lite_1,lin_1;
 
-    private int outs_passed=0;                              //判定是否已经使用了查看信息按钮
+    private int outs_passed=0;                              //判斷使否使用查看信息按鈕
     private String record_outs=" ";
 
     public String ac_priority=" ";
@@ -82,7 +82,7 @@ public class changes_in_1 extends AppCompatActivity implements View.OnClickListe
 
                 if (ccin.getCount()==0)
                 {
-                    Toast.makeText(changes_in_1.this,"数据库中还未添加该活动数据",Toast.LENGTH_LONG).show();
+                    Toast.makeText(changes_in_1.this,"數據庫中還未添加活動數據",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
@@ -109,17 +109,17 @@ public class changes_in_1 extends AppCompatActivity implements View.OnClickListe
 
                 if (outs_passed == 0)
                 {
-                    Toast.makeText(this,"未查看活动信息，请先查看活动信息！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"未查看活動信息，請先查看活動信息！",Toast.LENGTH_LONG).show();
                     break;
                 }
 
                 if (delete_nubs == " " || ac_na == " " || times == " " || ac_ad == " " || ac_priority == " ")
                 {
-                    Toast.makeText(this,"活动信息不完整，请完善活动信息！",Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,"活動信息不完整，請填完整活動信息！",Toast.LENGTH_LONG).show();
                     break;
                 }
 
-                sql_db=helper.getWritableDatabase();    //用读写方式打开数据库
+                sql_db=helper.getWritableDatabase();    //用讀寫方式打開數據庫
                 int total_deleted=sql_db.delete(lite_1,"num=?",new String[]{delete_nubs});
                 outs_passed=0;
 
@@ -133,7 +133,7 @@ public class changes_in_1 extends AppCompatActivity implements View.OnClickListe
                 values.put("record",record_outs);
                 Long postion=sql_db.insert(lite_1,null,values);
                 sql_db.close();
-                Toast.makeText(this,"成功更改序号为"+delete_nubs+"的活动",Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"成功更改序號為"+delete_nubs+"的活動",Toast.LENGTH_LONG).show();
 
                 ac_nub.setText(" ");
                 ac_names.setText(" ");
