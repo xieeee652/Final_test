@@ -150,7 +150,7 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_1:
 
                 Intent intent = new Intent();
-                intent.setClass(this,Main_menu.class);     //Main_menu为主界面class
+                intent.setClass(this,Main_menu.class);     //Main_menu為主界面class
                 startActivity(intent);
                 finish();
                 break;
@@ -178,7 +178,7 @@ public class DakaActivity extends AppCompatActivity implements View.OnClickListe
                     //获取当前时间
                     str = formatter.format(curDate);
                     handler.sendMessage(handler.obtainMessage(100,str));
-                    Thread.sleep(1000);//实时显示当前时间
+                    Thread.sleep(1000);//顯示當前時間
                 }
             }
             catch (InterruptedException e){

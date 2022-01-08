@@ -144,7 +144,7 @@ public class changes_in_1 extends AppCompatActivity implements View.OnClickListe
 
             case R.id.bot_00:
                 Intent intent = new Intent();
-                intent.setClass(this,Activity_menu.class);     //MainActivity后面需要替代为主界面class
+                intent.setClass(this,Activity_menu.class);     //MainActivity后面需要替代為主界面class
                 startActivity(intent);
                 finish();
                 break;
