@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="txt_size_item">
+        <item>1dp</item>
+        <item>3dp</item>
+        <item>5dp</item>
+        <item>7dp</item>
+        <item>9dp</item>
+        <item>11dp</item>
+        <item>13dp</item>
+        <item>15dp</item>
+    </array>
+</resources>

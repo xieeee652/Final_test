@@ -36,15 +36,6 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_3"
         tools:layout_editor_absoluteX="1dp" />
 
-    <Button
-        android:id="@+id/btn_01"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="查看打卡位置"
-        android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_04"
-        tools:layout_editor_absoluteX="1dp" />
-
     <TextView
         android:id="@+id/tv_3"
         android:layout_width="match_parent"
@@ -63,7 +54,7 @@
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_01"
+        app:layout_constraintBottom_toTopOf="@+id/btn_04"
         tools:layout_editor_absoluteX="1dp" />
 
     <Button

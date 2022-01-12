@@ -149,7 +149,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:text="高"
-                android:textColor="@color/black"
+                android:textColor="@color/indigo"
                 android:textSize="16sp" />
 
             <TextView
@@ -166,7 +166,7 @@
                 android:layout_gravity="center"
                 android:layout_below="@id/rb_1"
                 android:text="低"
-                android:textColor="@color/black"
+                android:textColor="@color/indigo"
                 android:textSize="16sp" />
 
         </RadioGroup>

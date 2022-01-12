@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <!--设置背景颜色-->
+            <solid android:color="@color/steel_blue" />
+            <!--设置渐变色angle=0从左到右渲染，angle=90从上到下渲染，angle=180从右到左渲染-->
+            <gradient
+                android:angle="0"
+                android:startColor="@color/peach_puff"
+                android:centerColor="@color/deep_sky_blue"
+                android:endColor="@color/dark_slate_blue"
+                android:type="linear"/>
+            <!--设置角的弧度-->
+            <corners android:radius="30dp" />
+            <!--设置边框以及颜色-->
+            <stroke
+                android:width="1dp"
+                android:color="@color/dark_turquoise"/>
+            <!--padding Button里面的文字与Button边界的间隔-->
+            <padding
+                android:bottom="1dp"
+                android:left="5dp"
+                android:right="5dp"
+                android:top="1dp"/>
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape>
+            <!--设置点击之后的颜色-->
+            <solid android:color="@color/coral" />
+            <!--设置点击之后渐变色angle=0从左到右渲染，angle=90从上到下渲染，angle=180从右到左渲染-->
+            <gradient
+                android:angle="0"
+                android:startColor="@color/misty_rose"
+                android:centerColor="@color/hot_pink"
+                android:endColor="@color/misty_rose"
+                android:type="linear"/>
+            <!--设置点击之后角的弧度-->
+            <corners android:radius="15dp" />
+            <!--设置点击之后边框以及颜色-->
+            <stroke
+                android:width="1dp"
+                android:color="@color/coral"/>
+        </shape>
+    </item>
+    <!--设置按钮使能之前,使能之后的背景图片-->
+    <item android:state_enabled="true" android:drawable="@drawable/image01"/>
+    <item android:state_enabled="false" android:drawable="@drawable/image02"/>
+
+</selector>

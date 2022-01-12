@@ -1,13 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.final_test">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.example.sql_light_demo">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+    <!--          The API key for Google Maps-based APIs. -->
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDnF8sEnl8mB4ROkuLeArDXdXhxOeeurRM" />
+
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 允许程序设置内置sd卡的写权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 允许程序获取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 允许程序访问WiFi网络信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 允许程序读写手机状态和身份 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 允许程序访问CellID或WiFi热点来获取粗略的位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/addsin"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/addsin"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Final_test"></application>
+        android:theme="@style/AppTheme">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".SignInActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".LoginActivity" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".Activity_menu" android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".Main_menu" android:configChanges="orientation|keyboardHidden|screenSize">
+            //总目录
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".alarm_setting" android:configChanges="orientation|keyboardHidden|screenSize">
+            //鬧鐘
+        </activity>
+        <activity android:name=".MainActivity_hy" android:configChanges="orientation|keyboardHidden|screenSize">
+            //計數
+        </activity>
+        <activity android:name=".DakaActivity" android:configChanges="orientation|keyboardHidden|screenSize">
+
+            //打卡
+        </activity>
+        <activity android:name=".MainActivity" android:configChanges="orientation|keyboardHidden|screenSize">
+            //增删查数据库
+        </activity>
+        <activity android:name=".changes_in_1" android:configChanges="orientation|keyboardHidden|screenSize">
+            //修改数据库数据
+        </activity>
+    </application>
 
 </manifest>
