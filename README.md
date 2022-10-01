@@ -8,4 +8,4 @@
 
 影片Demo：https://youtu.be/PeMMnViOUcc
 
-ppt:https://docs.google.com/presentation/d/1Y8EIGwsF4IUZ1puhb1WFqAcNEoQF95QOoBI0HNyODio/edit#slide=id.g10d24640098_4_189
+ppt:https://docs.google.com/presentation/d/1Y8EIGwsF4IUZ1puhb1WFqAcNEoQF95QOoBI0HNyODio/edit#slide=id.p
